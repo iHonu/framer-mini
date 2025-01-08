@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import { Button } from './ui/Button';
 
 export const Header = () => {
   return (
-    <header>
+    <header className="fixed top-0 left-0  w-full z-50 h-20">
       <div className="container !max-w-full">
-        <div className="flex justify-between items-center h-20 ">
+        <div className="flex justify-between items-center h-20 backdrop:blur-md ">
           <div className="">
             <Link
               href="/"
@@ -29,9 +30,9 @@ export const Header = () => {
                 <rect x="3" y="7" width="18" height="2" fill="currentColor" />
               </svg>
             </div>
-            <button className="bg-red-orange-500 h-11 px-6 rounded-xl text-white items-center border border-red-orange-500 uppercase hidden md:inline-flex ">
+            <Button variant="primary" className=" hidden md:inline-flex ">
               Contact us
-            </button>
+            </Button>
           </div>
         </div>
       </div>
