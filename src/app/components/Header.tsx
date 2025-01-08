@@ -18,7 +18,7 @@ export const Header = () => {
             </Link>
           </div>
           <div className="flex items-center justify-center gap-4">
-            <div className="size-11 border border-stone-300 rounded-full inline-flex items-center justify-center">
+            <div className="size-11 border border-stone-300 bg-stone-200 rounded-full inline-flex items-center justify-center">
               <svg
                 width="24"
                 height="24"
