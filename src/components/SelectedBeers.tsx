@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import wildImage from '../../../public/beers/wild.png';
-import dwaalImage from '../../../public/beers/dwaal.png';
-import minneImage from '../../../public/beers/minne.png';
-import gloedBatchImage from '../../../public/beers/gloed-batch.png';
-import dewImage from '../../../public/beers/dew.png';
+import wildImage from '../../public/beers/wild.png';
+import dwaalImage from '../../public/beers/dwaal.png';
+import minneImage from '../../public/beers/minne.png';
+import gloedBatchImage from '../../public/beers/gloed-batch.png';
+import dewImage from '../../public/beers/dew.png';
 
 export const SelectedBeers = () => {
   const selectedBeers = [

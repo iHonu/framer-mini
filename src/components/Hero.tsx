@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import heroImage from '../../../public/hero.jpg';
+import heroImage from '../../public/hero.jpg';
 import { Button } from './ui/Button';
 export const Hero = () => {
   return (
