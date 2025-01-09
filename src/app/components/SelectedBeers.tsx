@@ -3,8 +3,8 @@ import Image from 'next/image';
 import wildImage from '../../../public/beers/wild.png';
 import dwaalImage from '../../../public/beers/dwaal.png';
 import minneImage from '../../../public/beers/minne.png';
-import gloedBatchImage from '../../../public/beers/gloed_batch.jpg';
-import dewImage from '../../../public/beers/dew.jpg';
+import gloedBatchImage from '../../../public/beers/gloed-batch.png';
+import dewImage from '../../../public/beers/dew.png';
 
 export const SelectedBeers = () => {
   const selectedBeers = [
@@ -35,16 +35,27 @@ export const SelectedBeers = () => {
     },
   ];
   return (
-    <section className="py-24">
+    <section className="py-24 md:py-32 lg:py-40">
       <div className="container">
-        <h2 className="text-4xl">Selected Bears</h2>
-        <div className="mt-10">
+        <h2 className="text-4xl md:text-7xl lg:text-8xl">Selected Bears</h2>
+        <div className="mt-10 md:mt-16 lg:mt-20">
           {selectedBeers.map(({ name, image, link }) => (
-            <Link key={name} href={link}>
-              <div className="border-b border-stone-400 py-6 border-dotted flex items-center justify-between">
-                <Image src={image} alt={name} className=" max-w-40" />
-                <div className="mt-8 flex justify-between items-center">
-                  <h3 className="text-2xl">{name}</h3>
+            <Link
+              key={name}
+              href={link}
+              className="border-t border-stone-400 py-6 md:py-8 lg:py-10 border-dotted flex flex-col last:border-b "
+            >
+              <div className=" flex items-center justify-between md:block">
+                <div className="w-36 md:hidden">
+                  <Image
+                    src={image}
+                    alt={name}
+                    className="size-full object-cover"
+                  />
+                </div>
+
+                <div className="flex justify-between items-center">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl">{name}</h3>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
