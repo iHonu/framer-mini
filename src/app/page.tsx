@@ -5,6 +5,7 @@ import { Intro } from '../components/Intro';
 import { SelectedBeers } from '../components/SelectedBeers';
 import { Shops } from '../components/Shops';
 import { FAQs } from '../components/FAQs';
+import { Footer } from '../components/Footer';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Shops />
       <Details />
       <FAQs />
+      <Footer />
     </>
   );
 }
