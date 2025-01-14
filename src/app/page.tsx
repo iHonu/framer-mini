@@ -1,8 +1,10 @@
+import { Details } from '@/components/Details';
 import { Hero } from '../components/Hero';
 // import { Header } from '../components/Header';
 import { Intro } from '../components/Intro';
 import { SelectedBeers } from '../components/SelectedBeers';
-import { Shops } from '../components/ui/Shops';
+import { Shops } from '../components/Shops';
+import { FAQs } from '../components/FAQs';
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       <Intro />
       <SelectedBeers />
       <Shops />
+      <Details />
+      <FAQs />
     </>
   );
 }

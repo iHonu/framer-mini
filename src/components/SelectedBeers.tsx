@@ -35,7 +35,7 @@ export const SelectedBeers = () => {
     },
   ];
   return (
-    <section className="py-24 md:py-32 lg:py-40">
+    <section className="section">
       <div className="container">
         <h2 className="text-4xl md:text-7xl lg:text-8xl">Selected Bears</h2>
         <div className="mt-10 md:mt-16 lg:mt-20">

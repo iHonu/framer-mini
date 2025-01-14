@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Card, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardHeader } from '@/components/ui/card';
 interface Shop {
   id: string;
   name: string;
@@ -36,13 +36,13 @@ export const Shops = () => {
 
   console.log(regions);
   return (
-    <section className="min-h-screen">
-      <div className="container !max-w-full">
+    <section className="section section-x-margin">
+      <div className=" !max-w-full">
         <h2 className="text-3xl md:text-6xl lg:text-8xl pt-6 mb-6 md:pt-12 md:mb-12">
           Shops
         </h2>
 
-        <div className="flex flex-col md:flex-row h-[80vh] md:h-[calc(100vh-320px)] md:border-l md:border-r border-stone-400">
+        <div className="flex flex-col md:flex-row h-auto md:h-[calc(100vh-320px)] md:border-l md:border-r border-stone-400">
           {/* Regions tabs - left side */}
           <div className=" md:w-1/3 flex flex-col justify-center md:border-r md:border-t border-t-stone-500 md:border-b border-stone-400">
             <div className="flex flex-wrap mb-4 md:mb-0 flex-row md:flex-col gap-3 md:gap-2 p-2 md:p-0">
@@ -70,7 +70,7 @@ export const Shops = () => {
                     {selectedRegion.name}
                   </h3>
                 </div>
-                <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-1 md:gap-6 auto-rows-fr mx-4 mt-2 md:mx-10 md:mt-8">
+                <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-1 md:gap-3 lg:gap-4 auto-rows-fr mx-4 mt-2 md:mx-10 md:mt-8">
                   {shops.map((shop) => (
                     <Link
                       key={shop.name}
@@ -78,7 +78,7 @@ export const Shops = () => {
                       className="h-full "
                     >
                       <Card className="group transition-colors h-full bg-transparent border-none shadow-none rounded-none ">
-                        <CardHeader className="flex flex-row items-start justify-between h-full gap-1 p-3 md:p-6">
+                        <CardHeader className="flex flex-row items-start justify-between h-full gap-1 p-3 md:p-4 lg:p-6">
                           <div className="space-y-1">
                             <h3 className="text-xl group-hover:text-red-orange-500">
                               {shop.name}
