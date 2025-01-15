@@ -1,6 +1,6 @@
 import { Details } from '@/components/Details';
 import { Hero } from '../components/Hero';
-// import { Header } from '../components/Header';
+import { Header } from '../components/Header';
 import { Intro } from '../components/Intro';
 import { SelectedBeers } from '../components/SelectedBeers';
 import { Shops } from '../components/Shops';
@@ -10,7 +10,7 @@ import { Footer } from '../components/Footer';
 export default function Home() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Hero />
       <Intro />
       <SelectedBeers />

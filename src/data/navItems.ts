@@ -1,8 +1,8 @@
 export const navItems = [
-  { href: '#', label: 'Home' },
-  { href: '#', label: 'Selected Beers' },
-  { href: '#', label: 'Description' },
-  { href: '#', label: 'Shops' },
-  { href: '#', label: 'FAQs' },
-  { href: '#', label: 'Contact' },
+  { href: '#introduction', label: 'Introduction' },
+  { href: '#selected-beers', label: 'Selected Beers' },
+  { href: '#shops', label: 'Shops' },
+  { href: '#details', label: 'Details' },
+  { href: '#faqs', label: 'FAQs' },
+  { href: '#contact', label: 'Contact' },
 ];

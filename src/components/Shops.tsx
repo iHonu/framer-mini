@@ -36,7 +36,7 @@ export const Shops = () => {
 
   console.log(regions);
   return (
-    <section className="section section-x-margin">
+    <section className="section section-x-margin" id="shops">
       <div className=" !max-w-full">
         <h2 className="text-3xl md:text-6xl lg:text-8xl pt-6 mb-6 md:pt-12 md:mb-12">
           Shops

@@ -4,7 +4,7 @@ import Image from 'next/image';
 export const Details = () => {
   const detailsIndex = 0;
   return (
-    <section className="section section-x-margin">
+    <section className="section section-x-margin" id="details">
       <h2 className="text-4xl md:text-7xl lg:text-8xl flex flex-col overflow-hidden">
         <span className="whitespace-nowrap">What makes us unique</span>
         <span className="whitespace-nowrap self-end text-red-orange-500">
