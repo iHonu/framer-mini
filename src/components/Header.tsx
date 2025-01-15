@@ -57,9 +57,9 @@ export const Header = () => {
   ]);
 
   return (
-    <header className="absolute top-0 left-0 w-full  h-20 z-20">
+    <header className="absolute top-0 left-0 w-full bg-stone-900  h-20 z-30">
       <div
-        className="absolute top-0 left-0 w-full h-20 bg-stone-900 overflow-hidden z-20"
+        className="absolute top-0 left-0 w-full h-20 bg-stone-900 overflow-hidden z-30"
         ref={navScope}
       >
         <nav className="mt-20 flex flex-col gap-4">
@@ -90,27 +90,30 @@ export const Header = () => {
                   />
                 </svg>
               </div>
-              <div className="absolute w-full h-0 bg-red-orange-500 group-hover/nav-item:h-full transition-all duration-500 bottom-0 -z-10"></div>
+              <div className="absolute w-full h-0 bg-red-orange-500 group-hover/nav-item:h-full transition-all duration-500 bottom-0 -z-20"></div>
             </a>
           ))}
         </nav>
       </div>
-      <div className="container  !max-w-full z-20">
+      <div className="container  !max-w-full z-30">
         <div className="flex justify-between items-center h-20 backdrop:blur-md ">
           <div className="">
             <Link
               href="/"
-              className="text-xl font-bold uppercase flex items-center justify-center gap-2"
+              className="text-xl font-bold uppercase flex items-center justify-center gap-2 text-stone-200"
             >
-              <div className="size-8 border border-stone-600 rounded-full flex items-center justify-center">
+              <div className="size-8 border border-stone-200 rounded-full flex items-center justify-center">
                 <img src="./logo.svg" className="size-6" />
               </div>
               <span>Nevel</span>
             </Link>
           </div>
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center justify-center gap-4 ">
+            <Button variant="primary" className=" hidden md:inline-flex z-30 ">
+              Contact us
+            </Button>
             <div
-              className="size-11 border border-stone-300 bg-stone-200 rounded-full flex items-center justify-center relative"
+              className="size-11 border border-stone-300 bg-stone-200 rounded-full flex items-center justify-center relative z-30"
               onClick={() => setIsOpen(!isOpen)}
             >
               <motion.svg
@@ -138,9 +141,6 @@ export const Header = () => {
                 <rect x="3" y="15" width="18" height="2" fill="currentColor" />
               </motion.svg>
             </div>
-            <Button variant="primary" className=" hidden md:inline-flex ">
-              Contact us
-            </Button>
           </div>
         </div>
       </div>
