@@ -24,7 +24,17 @@ export const Shops = () => {
   useEffect(() => {
     const fetchShops = async () => {
       const data = await fetch('api/shops').then((res) => res.json());
+      console.log('Fetched regions:', data);
       setRegions(data);
+      const noordHolland = data.find((region: Region) => {
+        console.log('Checking region:', region.name.toLowerCase());
+        return region.name.toLowerCase() === 'noord-holland';
+      });
+      console.log('Found Noord Holland:', noordHolland);
+      if (noordHolland) {
+        setSelectedRegion(noordHolland);
+        setShops(noordHolland.shops);
+      }
     };
     fetchShops();
   }, []);
@@ -78,8 +88,8 @@ export const Shops = () => {
                       className="h-full "
                     >
                       <Card className="group transition-colors h-full bg-transparent border-none shadow-none rounded-none ">
-                        <CardHeader className="flex flex-row items-start justify-between h-full gap-1 p-3 md:p-4 lg:p-6">
-                          <div className="space-y-1">
+                        <CardHeader className="flex flex-row items-center justify-between h-full gap-1 p-3 md:p-4 lg:p-6">
+                          <div className="space-y-1 flex flex-col md:flex-col-reverse items-start justify-start">
                             <h3 className="text-xl group-hover:text-red-orange-500">
                               {shop.name}
                             </h3>
@@ -113,75 +123,8 @@ export const Shops = () => {
               <div></div>
             )}
           </div>
-
-          {/* Shops list - right side */}
-          {/* <div className="w-2/3 overflow-y-auto border-t border-t-stone-500 border-b border-stone-400">
-            {selectedRegion ? (
-              <div className="space-y-10 overflow-y-auto">
-                <div className="flex flex-col items-start space-y-8 pt-8 w-full">
-                  <h3 className="text-xl md:text-2xl lg:text-3xl ml-14 uppercase">
-                    {selectedRegion.name}
-                  </h3>
-                  <div className="w-full border-b border-stone-400"></div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 auto-rows-fr">
-                  {shops.map((shop) => (
-                    <Link
-                      key={shop.name}
-                      href={shop.website}
-                      className="flex gap-4 items-start justify-between"
-                    >
-                      <div className="space-y-2 ml-14 pb-2">
-                        <h3 className="font-bold text-xl">{shop.name}</h3>
-                        <div className="flex flex-row items-center justify-start gap-2">
-                          <p className="text-gray-600">{shop.address}</p>
-                        </div>
-                      </div>
-                      <div>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth="1.5"
-                          stroke="currentColor"
-                          className="size-6"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-                          />
-                        </svg>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              <p className="text-gray-500">Select a region to view shops</p>
-            )}
-          </div> */}
         </div>
       </div>
     </section>
   );
 };
-
-{
-  /* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-fr">
-        {shops.map((shop) => (
-          <Link key={shop.name} href={shop.href} className="h-full">
-            <Card className="group transition-colors hover:bg-gray-50 h-full">
-              <CardHeader className="flex flex-row items-center justify-between p-6 h-full">
-                <div className="space-y-1">
-                  <CardTitle className="text-xl font-normal">{shop.name}</CardTitle>
-                  <p className="text-gray-500">{shop.location}</p>
-                </div>
-                <ArrowUpRight className="h-5 w-5 text-gray-400 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-              </CardHeader>
-            </Card>
-          </Link>
-        ))}
-      </div> */
-}

@@ -1,7 +1,12 @@
+'use client';
+
 import { navItems } from '@/data/navItems';
 import { Button } from '@/components/ui/Button';
 
 export const Footer = () => {
+  const handleContactClick = () => {
+    window.location.href = 'mailto:info@nevel.org?subject=Contact Request';
+  };
   return (
     <footer className="bg-stone-900 text-white" id="contact">
       <div className="container">
@@ -20,6 +25,7 @@ export const Footer = () => {
                 <Button
                   variant="secondary"
                   className="mt-8 group/button"
+                  onClick={handleContactClick}
                   iconRight={
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

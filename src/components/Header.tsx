@@ -56,6 +56,10 @@ export const Header = () => {
     animateNav,
   ]);
 
+  const handleContactClick = () => {
+    window.location.href = 'mailto:info@nevel.org?subject=Contact Request';
+  };
+
   return (
     <header className="absolute top-0 left-0 w-full bg-stone-900  h-20 z-30">
       <div
@@ -108,7 +112,11 @@ export const Header = () => {
             </Link>
           </div>
           <div className="flex items-center justify-center gap-4 ">
-            <Button variant="primary" className=" hidden md:inline-flex z-30 ">
+            <Button
+              variant="primary"
+              className=" hidden md:inline-flex z-30 "
+              onClick={handleContactClick}
+            >
               Contact us
             </Button>
             <div
