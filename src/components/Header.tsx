@@ -72,7 +72,6 @@ export const Header = () => {
             >
               <div className="container !max-w-full flex items-center justify-between ">
                 <span className="text-3xl group-hover/nav-item:pl-4 transition-all duration-500">
-                  {' '}
                   {label}
                 </span>
                 <svg

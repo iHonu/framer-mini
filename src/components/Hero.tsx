@@ -3,18 +3,11 @@
 import Image from 'next/image';
 import heroImage from '../../public/hero.jpg';
 import { Button } from './ui/Button';
-import SplitType from 'split-type';
-import {
-  useAnimate,
-  motion,
-  stagger,
-  useScroll,
-  useTransform,
-} from 'motion/react';
+import { useTextRevealAnimation } from '@/app/hooks/useTextRevealAnimation';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { useEffect, useRef } from 'react';
 
 export const Hero = () => {
-  const [titleScope, animateTitle] = useAnimate();
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -24,24 +17,11 @@ export const Hero = () => {
 
   const imageWidth = useTransform(scrollYProgress, [0, 1], ['100%', '240%']);
 
-  useEffect(() => {
-    new SplitType(titleScope.current, {
-      types: 'lines,words',
-      tagName: 'span',
-    });
+  const { scope, entranceAnimation } = useTextRevealAnimation();
 
-    animateTitle(
-      titleScope.current.querySelectorAll('.word'),
-      {
-        y: [50, 0],
-        opacity: [0, 1],
-      },
-      {
-        delay: stagger(0.2),
-        duration: 0.5,
-      }
-    );
-  }, []);
+  useEffect(() => {
+    entranceAnimation();
+  }, [entranceAnimation]);
 
   return (
     <section>
@@ -49,7 +29,7 @@ export const Hero = () => {
         <div className="md:col-span-7 flex flex-col justify-center">
           <div className="container !max-w-full">
             <motion.h1
-              ref={titleScope}
+              ref={scope}
               className="text-5xl md:text-6xl lg:text-7xl mt-40 md:mt-0"
             >
               Wild and sour beers brewed with sustainable, 100% Dutch

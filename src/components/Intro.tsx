@@ -1,43 +1,22 @@
 'use client';
 import { useEffect } from 'react';
-import { useInView, useAnimate, stagger } from 'motion/react';
-import SplitType from 'split-type';
+import { useInView } from 'motion/react';
+import { useTextRevealAnimation } from '@/app/hooks/useTextRevealAnimation';
 
 export const Intro = () => {
-  const [scope, animate] = useAnimate();
+  const { scope, entranceAnimation } = useTextRevealAnimation();
   const isInView = useInView(scope, { once: true });
 
   useEffect(() => {
-    new SplitType(scope.current.querySelector('h2'), {
-      types: 'lines,words',
-      tagName: 'span',
-    });
-  }, [scope]);
-
-  useEffect(() => {
     if (isInView) {
-      animate(
-        scope.current.querySelectorAll('.word'),
-        {
-          y: [50, 0],
-          opacity: [0, 1],
-        },
-        {
-          delay: stagger(0.2),
-          duration: 0.5,
-        }
-      );
+      entranceAnimation();
     }
-  }, [animate, isInView, scope]);
+  }, [isInView, entranceAnimation]);
 
   return (
-    <section
-      className="section mt-12 md:mt-16 lg:mt-20 "
-      id="introduction"
-      ref={scope}
-    >
+    <section className="section mt-12 md:mt-16 lg:mt-20 " id="introduction">
       <div className=" container  ">
-        <h2 className="text-3xl md:text-6xl lg:text-7xl ">
+        <h2 className="text-3xl md:text-6xl lg:text-7xl " ref={scope}>
           We reconnect people with nature, by brewing beer with Dutch
           ingredients sourced from sustainable, nature-friendly farmers, and
           fermenting it with our signature wild yeast culture

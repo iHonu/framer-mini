@@ -7,7 +7,7 @@ export const Footer = () => {
       <div className="container">
         <div className="section ">
           <div className="flex items-center gap-3">
-            <div className="size-3 rounded-full bg-green-400"></div>
+            <div className="size-3 rounded-full bg-green-400 animate-pulse"></div>
             <span className="uppercase">Get in touch with us </span>
           </div>
           <div>
@@ -19,7 +19,7 @@ export const Footer = () => {
                 </h2>
                 <Button
                   variant="secondary"
-                  className="mt-8"
+                  className="mt-8 group/button"
                   iconRight={
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,7 @@ export const Footer = () => {
                       viewBox="0 0 24 24"
                       strokeWidth="1.5"
                       stroke="currentColor"
-                      className="size-6"
+                      className="size-6 scale-95 group-hover:translate-x-1 group-hover:scale-100  group-hover:-translate-y-1 transition-all ease-in-out"
                     >
                       <path
                         strokeLinecap="round"
