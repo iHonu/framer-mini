@@ -19,6 +19,10 @@ export const Hero = () => {
 
   const { scope, entranceAnimation } = useTextRevealAnimation();
 
+  const handleContactClick = () => {
+    window.location.href = 'mailto:info@nevel.org?subject=Contact Request';
+  };
+
   useEffect(() => {
     entranceAnimation();
   }, [entranceAnimation]);
@@ -44,6 +48,11 @@ export const Hero = () => {
                 <Button
                   variant="secondary"
                   className="group"
+                  onClick={() => {
+                    document
+                      .querySelector('#selected-beers')
+                      ?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                   iconRight={
                     <div className="overflow-hidden size-5">
                       <div className="h-5 w-10 flex group-hover:-translate-x-1/2 transition-transform duration-300 ease-in-out">
@@ -87,7 +96,9 @@ export const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 2.4, duration: 0.5 }}
               >
-                <Button variant="text">Contact</Button>
+                <Button onClick={handleContactClick} variant="text">
+                  Contact
+                </Button>
               </motion.div>
             </div>
           </div>
