@@ -94,7 +94,7 @@ export const Hero = () => {
         </div>
         <div className="md:col-span-5 relative">
           <motion.div
-            className="mt-20 md:mt-0 md:size-full md:absolute md:right-0 max-md:!w-full"
+            className="mt-20 md:mt-0 md:size-full md:absolute md:right-0 max-md:!w-full overflow-hidden"
             style={{ width: imageWidth }}
           >
             <Image
@@ -105,7 +105,7 @@ export const Hero = () => {
           </motion.div>
         </div>
       </div>
-      <div className="h-[100vh]" ref={scrollRef}></div>
+      <div className="md:h-[100vh] overflow-x-hidden" ref={scrollRef}></div>
     </section>
   );
 };
