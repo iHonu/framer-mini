@@ -4,6 +4,7 @@ import { Header } from '../components/Header';
 import { Intro } from '../components/Intro';
 import { SelectedBeers } from '../components/SelectedBeers';
 import { Shops } from '../components/Shops';
+import { Video } from '../components/Video';
 import { FAQs } from '../components/FAQs';
 import { Footer } from '../components/Footer';
 
@@ -16,6 +17,7 @@ export default function Home() {
       <SelectedBeers />
       <Shops />
       <Details />
+      <Video />
       <FAQs />
       <Footer />
     </>
